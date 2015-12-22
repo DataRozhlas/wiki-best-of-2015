@@ -11,6 +11,7 @@ externalStyles =
   ...
 
 externalData =
+  "style": "#__dirname/www/screen.css"
   "data": "#__dirname/data/spikes-stats.tsv"
 
 preferScripts = <[ utils.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>

@@ -28,11 +28,11 @@ months =
   "11" : "listopadu"
   "12" : "prosince"
 
-headers = d3.selectAll '#article p b:only-child'
+headers = d3.selectAll '#article p.perex ~ p'
   ..each (_, i) ->
     element = document.createElement "div"
       ..setAttribute \class \ig
-    @parentNode.appendChild element
+    @appendChild element
     container = d3.select element
     term = terms[i]
     max = d3.max data.map (.[term])
