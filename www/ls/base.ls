@@ -30,6 +30,7 @@ months =
 
 headers = d3.selectAll '#article p.perex ~ p'
   ..each (_, i) ->
+    <~ setTimeout _, i * 100
     element = document.createElement "div"
       ..setAttribute \class \ig
     @appendChild element

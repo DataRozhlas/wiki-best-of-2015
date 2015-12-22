@@ -62,7 +62,7 @@ class ig.LineChart
     y = @scaleY point.y
     @updateInteractionLines x, y
     @svg.classed \active yes
-    for element in [@lines.points, @axisX.tickG, @axisY.tickG]
+    for element in [@axisX.tickG, @axisY.tickG]
       element.classed \active -> it is point
 
   downlight: ->
@@ -85,13 +85,8 @@ class ig.LineChart
       ..attr \class \line
     line = lineG.append \path
       ..attr \d ~> svgLine it.points
-    pointsG = lineG.append \g
-      ..attr \class \points
-    points = pointsG.selectAll \circle .data (.points) .enter!append \circle
-      ..attr \transform ~> "translate(#{@scaleX it.x},#{@scaleY it.y})"
-      ..attr \r 4
 
-    @lines = {g, lineG, line, pointsG, points}
+    @lines = {g, lineG, line}
 
   getSvgLine: ->
     d3.svg.line!
