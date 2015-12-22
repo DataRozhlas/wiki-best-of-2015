@@ -4,5 +4,12 @@
 
 .ig
   @import basics
+  @import LineChart
 .ig
-  background yellow
+  position relative
+  circle
+    display none
+  .axis.x g.tick:not(.active)
+    display none
+  .axis.y .tick:last-child:not(.active)
+    display none
